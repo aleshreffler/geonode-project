@@ -19,8 +19,9 @@
 #########################################################################
 
 # Django settings for the GeoNode project.
-import ast
 import os
+import ast
+
 try:
     from urllib.parse import urlparse, urlunparse
     from urllib.request import urlopen, Request
@@ -62,9 +63,8 @@ if PROJECT_NAME not in INSTALLED_APPS:
 ROOT_URLCONF = os.getenv('ROOT_URLCONF', '{}.urls'.format(PROJECT_NAME))
 
 # Additional directories which hold static files
-STATICFILES_DIRS.append(
-    os.path.join(LOCAL_ROOT, "static"),
-)
+# - Give priority to local geonode-project ones
+STATICFILES_DIRS = [os.path.join(LOCAL_ROOT, "static"), ] + STATICFILES_DIRS
 
 # Location of locale files
 LOCALE_PATHS = (
@@ -96,7 +96,7 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': 'ERROR',
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
