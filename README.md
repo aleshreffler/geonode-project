@@ -1,6 +1,6 @@
 # GeoNode Prototype | Shreffler Capstone Project
 
-GeoNode template project. Generates a django project with GeoNode support.
+Customized GeoNode template project. Generates a django project with GeoNode support.
 
 ## Table of Contents
 
