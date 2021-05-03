@@ -1,4 +1,4 @@
-# {{ project_name|title }}
+# GeoNode Prototype | Shreffler Capstone Project
 
 GeoNode template project. Generates a django project with GeoNode support.
 
